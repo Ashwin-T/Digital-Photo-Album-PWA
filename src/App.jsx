@@ -54,17 +54,11 @@ const App = ()=>{
   const lockOrUnlock = async()=>{
     const docRef = doc(db, "forHer", "OneYear");
     await updateDoc(docRef, {
-      lock: !lock
+      lock: !lock,
+      pause: false
     })
     setLock(!lock);
-
-    if(!lock){
-      await updateDoc(docRef, {
-        pause: true
-      });
-  
-      setPause(true);
-    }
+    setPause(true);
   }
 
   const passwordCheckFunc = (e)=>{
