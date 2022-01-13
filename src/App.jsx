@@ -3,12 +3,13 @@ import {FaLockOpen, FaLock, FaPauseCircle, FaPlayCircle} from 'react-icons/fa';
 import {getFirestore, getDoc, doc, updateDoc } from 'firebase/firestore';
 import app from './Firebase';
 import {Hearts} from 'react-loader-spinner'
+import {password} from './env';
 const App = ()=>{
 
   const [lock, setLock] = useState(true);
   const [pause, setPause] = useState(true);
   const [loading, setLoading] = useState(true);
-
+  const [passwordCheck, setPasswordCheck] = useState(false);
 
   const db = getFirestore(app);
 
@@ -36,10 +37,10 @@ const App = ()=>{
   useEffect(() => {
     const interval = setTimeout(() => {
       setLoading(false);
-    }, 2500);
+    }, 2000);
 
     return () => clearTimeout(interval);
-  } , [])
+  } , [passwordCheck])
 
   const playOrPause = async()=>{
     const docRef = doc(db, "forHer", "OneYear");
@@ -59,31 +60,43 @@ const App = ()=>{
     setLock(!lock);
   }
 
-  const Content = ()=>{
-    return(
-      <>
-      <div className="content">
-        {lock ? <FaLockOpen size = {100} onClick = {lockOrUnlock}/> : <FaLock size = {100} onClick = {lockOrUnlock}/>}
-        {pause ? <FaPlayCircle size = {100} onClick = {playOrPause}/> : <FaPauseCircle size = {100} onClick = {playOrPause}/>}
-      </div>
-      <h3>
-        {lock ? "Locked" : 'Unlocked'}
-      </h3>
-      <h3>
-        {pause ? "Paused" : "Playing..."}
-      </h3>
-     
-
-    </>
-
-    )
+  const passwordCheckFunc = (e)=>{
+    if(e.target.value === password){
+      setPasswordCheck(true);
+      return true;
+    }
+    return false;
   }
+
+  const Content = ()=>{
+      return(
+        <>
+          <div className="content">
+            {lock ? <FaLockOpen size = {100} onClick = {lockOrUnlock}/> : <FaLock size = {100} onClick = {lockOrUnlock}/>}
+            {pause ? <FaPlayCircle size = {100} onClick = {playOrPause}/> : <FaPauseCircle size = {100} onClick = {playOrPause}/>}
+          </div>
+          <h3>
+            {lock ? "Locked" : 'Unlocked'}
+          </h3>
+          <h3>
+            {pause ? "Paused" : "Playing..."}
+          </h3>
+        </>
+      )
+    }
 
   return (
     <div className="App">
 
       {
-        loading ? <Hearts color = "#228B22" width = '50vw' arialLabel='loading'/> : <Content/>
+        loading ? <Hearts color = "#228B22" width = '50vw' arialLabel='loading'/> :  
+        passwordCheck ? <Content/> :
+        
+        <>
+          <input type = 'password' onChange = {(e)=>passwordCheckFunc(e)}/>
+          <h3>Type the Password</h3>
+        </>
+      
       }
 
      
