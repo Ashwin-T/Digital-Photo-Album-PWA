@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Digital-Photo-Album-PWA/static/css/main.d871402f.css",
+    "main.js": "/Digital-Photo-Album-PWA/static/js/main.37ef6cb9.js",
+    "service-worker.js": "/Digital-Photo-Album-PWA/service-worker.js",
+    "index.html": "/Digital-Photo-Album-PWA/index.html",
+    "main.d871402f.css.map": "/Digital-Photo-Album-PWA/static/css/main.d871402f.css.map",
+    "main.37ef6cb9.js.map": "/Digital-Photo-Album-PWA/static/js/main.37ef6cb9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d871402f.css",
+    "static/js/main.37ef6cb9.js"
+  ]
+}
