@@ -56,8 +56,15 @@ const App = ()=>{
     await updateDoc(docRef, {
       lock: !lock
     })
-
     setLock(!lock);
+
+    if(!lock){
+      await updateDoc(docRef, {
+        pause: true
+      });
+  
+      setPause(true);
+    }
   }
 
   const passwordCheckFunc = (e)=>{
