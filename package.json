@@ -1,7 +1,7 @@
 {
   "homepage": "http://gitname.github.io/Digital-Photo-Album-PWA/",
   "name": "digital-photo-album-pwa",
-  "version": "1.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
