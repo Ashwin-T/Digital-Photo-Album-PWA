@@ -44,11 +44,15 @@ const App = ()=>{
 
   const playOrPause = async()=>{
     const docRef = doc(db, "forHer", "OneYear");
-    await updateDoc(docRef, {
-      pause: !pause
-    });
 
-    setPause(!pause);
+    if(!lock){
+      await updateDoc(docRef, {
+        pause: !pause
+      });
+  
+      setPause(!pause);
+    }
+    
 
   }
   const lockOrUnlock = async()=>{
