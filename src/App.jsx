@@ -77,7 +77,7 @@ const App = ()=>{
       return(
         <>
           <div className="content">
-            {lock ? <FaLockOpen size = {100} onClick = {lockOrUnlock}/> : <FaLock size = {100} onClick = {lockOrUnlock}/>}
+            {lock ? <FaLock size = {100} onClick = {lockOrUnlock}/> : <FaLockOpen size = {100} onClick = {lockOrUnlock}/>}
             {pause ? <FaPlayCircle size = {100} onClick = {playOrPause}/> : <FaPauseCircle size = {100} onClick = {playOrPause}/>}
           </div>
           <h3>
