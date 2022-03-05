@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/Digital-Photo-Album-PWA/static/css/main.bf5415fc.css",
-    "main.js": "/Digital-Photo-Album-PWA/static/js/main.96f0f802.js",
+    "main.css": "/Digital-Photo-Album-PWA/static/css/main.c696c1e1.css",
+    "main.js": "/Digital-Photo-Album-PWA/static/js/main.fa8963e9.js",
     "service-worker.js": "/Digital-Photo-Album-PWA/service-worker.js",
     "index.html": "/Digital-Photo-Album-PWA/index.html",
-    "main.bf5415fc.css.map": "/Digital-Photo-Album-PWA/static/css/main.bf5415fc.css.map",
-    "main.96f0f802.js.map": "/Digital-Photo-Album-PWA/static/js/main.96f0f802.js.map"
+    "main.c696c1e1.css.map": "/Digital-Photo-Album-PWA/static/css/main.c696c1e1.css.map",
+    "main.fa8963e9.js.map": "/Digital-Photo-Album-PWA/static/js/main.fa8963e9.js.map"
   },
   "entrypoints": [
-    "static/css/main.bf5415fc.css",
-    "static/js/main.96f0f802.js"
+    "static/css/main.c696c1e1.css",
+    "static/js/main.fa8963e9.js"
   ]
 }
